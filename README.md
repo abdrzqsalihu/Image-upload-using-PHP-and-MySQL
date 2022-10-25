@@ -22,7 +22,7 @@ GitHub
 Terminal (cmd recommended)
 
 
-## Authors
+## Author
 
 * **Abdulrazaq Salihu** - *Project Lead* - [GitHub profile](https://github.com/abdrzqsalihu)
 
