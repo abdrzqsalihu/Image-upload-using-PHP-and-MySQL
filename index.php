@@ -30,7 +30,7 @@
 </head>
 <body> 
 
-<nav style="background:#454CAD">
+<nav style="background:#454CAD; position:fixed">
   <div class="container">
   <div class="row">
       <div class="col l4 m5 s6">
@@ -45,7 +45,7 @@
 </nav>
 
 
-<div class="container"><br><br><br>
+<div class="container"><br><br><br><br><br>
 
     <div class="row">
       <?php foreach ($products as $product){?>
