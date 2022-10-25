@@ -30,7 +30,7 @@
 </head>
 <body> 
 
-<nav style="background:#454CAD; position:fixed">
+<nav style="background:#454CAD; position:fixed; z-index:9">
   <div class="container">
   <div class="row">
       <div class="col l4 m5 s6">
