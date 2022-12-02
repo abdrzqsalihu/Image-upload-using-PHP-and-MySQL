@@ -12,18 +12,25 @@ if (isset($_POST['upload'])) {
   // Valid file extensions
   $extensions_arr = array("jpg","jpeg","png","gif");
 
+  // Generate Random String 
+  function generateRandomString($length = 10) {
+    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+  }
+  $random_text = generateRandomString(); 
+  $new_img_name = $random_text.'.'.$imgname;
+
   // Check extension
   if( in_array($imageFileType,$extensions_arr) ){
      // Upload file
-     if(move_uploaded_file($_FILES['ImageFile']['tmp_name'],$target_dir.$imgname)){
+     if(move_uploaded_file($_FILES['ImageFile']['tmp_name'],$target_dir.$new_img_name)){
         // Insert record
-        $query = "insert into images(img) values('".$imgname."')";
+        $query = "insert into images(img) values('".$new_img_name."')";
         
         if (mysqli_query($conn,$query)) {
             echo "<script>alert('Image Uploaded Successfully')</script>";
             header('location: index.php');				
         }else{
-            echo "<script>alert('Something went wrong')</script>";				
+            echo "<script>alert('Something went wrong, Please try again!')</script>";				
         }
      }
 
